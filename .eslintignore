@@ -1,0 +1,4 @@
+dist
+.nuxt
+.output
+6.fabric.client.ts

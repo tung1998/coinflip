@@ -1,0 +1,50 @@
+{
+  "name": "coinflip",
+  "version": "1.0.0",
+  "author": "coinflip",
+  "scripts": {
+    "build": "nuxt build --dotenv .env",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs",
+    "serve": "serve dist/",
+    "postinstall": "husky install",
+    "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .eslintignore .",
+    "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .eslintignore",
+    "prepare": "husky install",
+    "clean": "rm -rf .nuxt dist .output",
+    "generate:locales": "node tools/translator.js ./locales en.yml"
+  },
+  "dependencies": {
+    "@morev/vue-transitions": "2.3.4",
+    "@nuxtjs/critters": "^0.5.1",
+    "@nuxtjs/eslint-config-typescript": "10.0.0",
+    "@nuxtjs/eslint-module": "3.1.0",
+    "@pinia/nuxt": "0.4.6",
+    "@splidejs/splide-extension-grid": "^0.4.1",
+    "nuxt-windicss": "2.6.0",
+    "vue-demi": "^0.14.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.2.0",
+    "@commitlint/config-conventional": "17.2.0",
+    "@nuxt/test-utils-edge": "3.0.0-rc.13-27772354.a0a59e2",
+    "consola": "^3.0.2",
+    "eslint": "8.27.0",
+    "eslint-plugin-nuxt": "3.2.0",
+    "husky": "8.0.2",
+    "lint-staged": "13.0.3",
+    "nuxt": "^3.7.4",
+    "postcss": "8.4.14",
+    "postcss-loader": "7.0.0",
+    "prettier": "2.7.1",
+    "sass": "1.53.0",
+    "sass-loader": "13.2.0"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,vue,html}": [
+      "yarn lintfix"
+    ]
+  }
+}
